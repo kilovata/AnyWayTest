@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  MainCell.h
 //  AnyWayTest
 //
 //  Created by Sveta Kilovata on 16/04/15.
@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface MainCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UIWindow *window;
-
+@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 
 @end
-

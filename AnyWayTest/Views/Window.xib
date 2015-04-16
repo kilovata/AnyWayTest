@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIApplication">
+            <connections>
+                <outlet property="delegate" destination="nrS-B2-5HV" id="twO-HD-TNM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <customObject id="nrS-B2-5HV" customClass="AppDelegate">
+            <connections>
+                <outlet property="window" destination="Na2-4i-xf1" id="FwQ-ZB-s7B"/>
+            </connections>
+        </customObject>
+        <window opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Na2-4i-xf1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="rootViewController" destination="oDM-gs-WKQ" id="nr0-e6-5v3"/>
+            </connections>
+            <point key="canvasLocation" x="274" y="407"/>
+        </window>
+        <navigationController id="oDM-gs-WKQ">
+            <navigationBar key="navigationBar" contentMode="scaleToFill" id="VHz-wK-ri3">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </navigationBar>
+            <viewControllers>
+                <viewController id="ULh-UE-cnl" customClass="ViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DL3-7Y-XN4"/>
+                        <viewControllerLayoutGuide type="bottom" id="eNc-um-MwW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HwN-Mn-5fM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DGM-ky-hvA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="360"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ULh-UE-cnl" id="hLi-WZ-mCJ"/>
+                                    <outlet property="delegate" destination="ULh-UE-cnl" id="afp-60-M9m"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzG-tY-Kxc">
+                                <rect key="frame" x="30" y="390" width="260" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ru2-C8-hrP"/>
+                                </constraints>
+                                <state key="normal" title="Поиск авиабилетов">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fzG-tY-Kxc" firstAttribute="leading" secondItem="HwN-Mn-5fM" secondAttribute="leadingMargin" constant="14" id="9WT-7Y-3A0"/>
+                            <constraint firstItem="DGM-ky-hvA" firstAttribute="leading" secondItem="HwN-Mn-5fM" secondAttribute="leading" id="HWe-9u-4b6"/>
+                            <constraint firstItem="DGM-ky-hvA" firstAttribute="top" secondItem="HwN-Mn-5fM" secondAttribute="top" id="MnE-sq-mdM"/>
+                            <constraint firstItem="fzG-tY-Kxc" firstAttribute="top" secondItem="DGM-ky-hvA" secondAttribute="bottom" constant="30" id="QLK-6W-uI8"/>
+                            <constraint firstItem="eNc-um-MwW" firstAttribute="top" secondItem="fzG-tY-Kxc" secondAttribute="bottom" constant="138" id="UyA-Fm-mzq"/>
+                            <constraint firstItem="DGM-ky-hvA" firstAttribute="centerX" secondItem="fzG-tY-Kxc" secondAttribute="centerX" id="cjV-y3-u4P"/>
+                            <constraint firstAttribute="trailing" secondItem="DGM-ky-hvA" secondAttribute="trailing" id="t2R-3S-slm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="anywayanyday" id="WQQ-sG-3qq"/>
+                    <connections>
+                        <outlet property="buttonSearch" destination="fzG-tY-Kxc" id="OgL-mU-s0q"/>
+                        <outlet property="table" destination="DGM-ky-hvA" id="BlT-Tu-fyo"/>
+                    </connections>
+                </viewController>
+            </viewControllers>
+        </navigationController>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
