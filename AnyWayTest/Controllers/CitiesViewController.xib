@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CitiesViewController">
             <connections>
+                <outlet property="search" destination="tZz-Mr-qAo" id="U53-Q0-Dae"/>
+                <outlet property="table" destination="9jV-Lj-uJf" id="ZfA-xK-mnb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +16,33 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9jV-Lj-uJf">
+                    <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="r0K-sP-X9Z"/>
+                        <outlet property="delegate" destination="-1" id="i36-GY-1U6"/>
+                    </connections>
+                </tableView>
+                <searchBar contentMode="redraw" placeholder="Введите пункт отправления" translatesAutoresizingMaskIntoConstraints="NO" id="tZz-Mr-qAo">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="veO-8a-KMA"/>
+                    </connections>
+                </searchBar>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="9jV-Lj-uJf" firstAttribute="top" secondItem="tZz-Mr-qAo" secondAttribute="bottom" id="G6w-QI-1K3"/>
+                <constraint firstAttribute="bottom" secondItem="9jV-Lj-uJf" secondAttribute="bottom" id="XBF-rr-zTA"/>
+                <constraint firstItem="tZz-Mr-qAo" firstAttribute="trailing" secondItem="9jV-Lj-uJf" secondAttribute="trailing" id="Xhy-Iy-J2x"/>
+                <constraint firstItem="9jV-Lj-uJf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YB9-Wb-Vfr"/>
+                <constraint firstItem="9jV-Lj-uJf" firstAttribute="leading" secondItem="tZz-Mr-qAo" secondAttribute="leading" id="eCf-d0-6yY"/>
+                <constraint firstItem="tZz-Mr-qAo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ozV-4s-ZGI"/>
+                <constraint firstAttribute="trailing" secondItem="9jV-Lj-uJf" secondAttribute="trailing" id="unp-Uv-6t9"/>
+            </constraints>
             <point key="canvasLocation" x="274" y="407"/>
         </view>
     </objects>

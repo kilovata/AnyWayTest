@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,11 +19,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setShadowImage:[UIImage new]];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:51.f/255.f green:54.f/255.f blue:63.f/255.f alpha:1.f]];
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-    [[UINavigationBar appearance] setTranslucent:NO];
+
+    UINavigationController *navCont = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+    navCont.navigationBar.shadowImage = [UIImage new];
+    [navCont.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    navCont.navigationBar.barTintColor = [UIColor colorWithRed:51.f/255.f green:54.f/255.f blue:63.f/255.f alpha:1.f];
+    navCont.navigationBar.tintColor = [UIColor whiteColor];
+    navCont.navigationBar.translucent = NO;
+    navCont.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    self.window.rootViewController = navCont;
     
     return YES;
 }

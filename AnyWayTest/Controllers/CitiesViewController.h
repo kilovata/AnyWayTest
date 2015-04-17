@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CitiesViewController : UISearchController
+@protocol CitiesViewControllerDelegate <NSObject>
+
+- (void)returnCity:(NSString*)strCity andCountry:(NSString*)strCountry andArrive:(BOOL)isArrive;
+
+@end
+
+@interface CitiesViewController : UIViewController
+
+@property (weak, nonatomic) id <CitiesViewControllerDelegate> delegate;
+
+- (id)initWithArrive:(BOOL)isArriveValue;
 
 @end

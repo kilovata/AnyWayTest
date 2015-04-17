@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
+            <connections>
+                <outlet property="buttonSearch" destination="uGw-zn-Zc1" id="fwV-TV-ryu"/>
+                <outlet property="table" destination="LbU-uw-HQf" id="2fC-gR-KJj"/>
+                <outlet property="view" destination="46g-XX-0Vf" id="RU0-M3-XOG"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="46g-XX-0Vf">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LbU-uw-HQf">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="360"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="360" id="ZaX-Om-yz5"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="u2d-KK-evf"/>
+                        <outlet property="delegate" destination="-1" id="LFB-BQ-23j"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGw-zn-Zc1">
+                    <rect key="frame" x="30" y="390" width="260" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="yZq-FE-Lnz"/>
+                    </constraints>
+                    <state key="normal" title="Поиск авиабилетов">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="uGw-zn-Zc1" secondAttribute="trailing" constant="30" id="ENI-J2-Oh2"/>
+                <constraint firstItem="LbU-uw-HQf" firstAttribute="leading" secondItem="46g-XX-0Vf" secondAttribute="leading" id="TYE-dI-b2E"/>
+                <constraint firstItem="uGw-zn-Zc1" firstAttribute="top" secondItem="LbU-uw-HQf" secondAttribute="bottom" constant="30" id="ZQK-03-kOJ"/>
+                <constraint firstItem="LbU-uw-HQf" firstAttribute="centerX" secondItem="uGw-zn-Zc1" secondAttribute="centerX" id="de8-Hz-8A5"/>
+                <constraint firstItem="uGw-zn-Zc1" firstAttribute="leading" secondItem="46g-XX-0Vf" secondAttribute="leading" constant="30" id="djx-eR-cRS"/>
+                <constraint firstItem="LbU-uw-HQf" firstAttribute="top" secondItem="46g-XX-0Vf" secondAttribute="top" id="giE-AU-Ykg"/>
+                <constraint firstAttribute="trailing" secondItem="LbU-uw-HQf" secondAttribute="trailing" id="gm6-eg-3Xz"/>
+            </constraints>
+            <point key="canvasLocation" x="406" y="378"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		201CF8051D201B3400A2803A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99201343FACE6CEBC11CA80B /* libPods.a */; };
 		B52C90181AE04D5700C6F92A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B52C90171AE04D5700C6F92A /* main.m */; };
 		B52C901B1AE04D5700C6F92A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B52C901A1AE04D5700C6F92A /* AppDelegate.m */; };
 		B52C90231AE04D5700C6F92A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52C90221AE04D5700C6F92A /* Images.xcassets */; };
@@ -17,6 +18,10 @@
 		B52C90481AE05F2000C6F92A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B52C90471AE05F2000C6F92A /* ViewController.m */; };
 		B52C905E1AE05FE700C6F92A /* CitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B52C905C1AE05FE700C6F92A /* CitiesViewController.m */; };
 		B52C905F1AE05FE700C6F92A /* CitiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B52C905D1AE05FE700C6F92A /* CitiesViewController.xib */; };
+		B5CBB3DA1AE102F000E92A57 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5CBB3D91AE102F000E92A57 /* ViewController.xib */; };
+		B5CBB3E11AE12B8100E92A57 /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CBB3E01AE12B8100E92A57 /* CityModel.m */; };
+		B5CBB3E51AE145EF00E92A57 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CBB3E31AE145EF00E92A57 /* CalendarViewController.m */; };
+		B5CBB3E61AE145EF00E92A57 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5CBB3E41AE145EF00E92A57 /* CalendarViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		99201343FACE6CEBC11CA80B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3A27DACBD6E5D2CA845BCDD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B32686A7B2766FCBF8146514 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B52C90121AE04D5700C6F92A /* AnyWayTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyWayTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52C90161AE04D5700C6F92A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B52C90171AE04D5700C6F92A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -48,6 +56,12 @@
 		B52C905B1AE05FE700C6F92A /* CitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitiesViewController.h; sourceTree = "<group>"; };
 		B52C905C1AE05FE700C6F92A /* CitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitiesViewController.m; sourceTree = "<group>"; };
 		B52C905D1AE05FE700C6F92A /* CitiesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CitiesViewController.xib; sourceTree = "<group>"; };
+		B5CBB3D91AE102F000E92A57 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		B5CBB3DF1AE12B8100E92A57 /* CityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityModel.h; path = Models/CityModel.h; sourceTree = "<group>"; };
+		B5CBB3E01AE12B8100E92A57 /* CityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityModel.m; path = Models/CityModel.m; sourceTree = "<group>"; };
+		B5CBB3E21AE145EF00E92A57 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		B5CBB3E31AE145EF00E92A57 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		B5CBB3E41AE145EF00E92A57 /* CalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				201CF8051D201B3400A2803A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +83,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C1DBDB379D2019A1AE46451 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B32686A7B2766FCBF8146514 /* Pods.debug.xcconfig */,
+				A3A27DACBD6E5D2CA845BCDD /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9BE625BD6E33AED14E458938 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99201343FACE6CEBC11CA80B /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B52C90091AE04D5600C6F92A = {
 			isa = PBXGroup;
 			children = (
 				B52C90141AE04D5700C6F92A /* AnyWayTest */,
 				B52C902E1AE04D5700C6F92A /* AnyWayTestTests */,
 				B52C90131AE04D5700C6F92A /* Products */,
+				0C1DBDB379D2019A1AE46451 /* Pods */,
+				9BE625BD6E33AED14E458938 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,10 +123,11 @@
 		B52C90141AE04D5700C6F92A /* AnyWayTest */ = {
 			isa = PBXGroup;
 			children = (
-				B52C90451AE05F2000C6F92A /* Controllers */,
-				B52C903D1AE04DF300C6F92A /* Views */,
+				B5CBB3DE1AE12B5900E92A57 /* Models */,
 				B52C90191AE04D5700C6F92A /* AppDelegate.h */,
 				B52C901A1AE04D5700C6F92A /* AppDelegate.m */,
+				B52C90451AE05F2000C6F92A /* Controllers */,
+				B52C903D1AE04DF300C6F92A /* Views */,
 				B52C90221AE04D5700C6F92A /* Images.xcassets */,
 				B52C90151AE04D5700C6F92A /* Supporting Files */,
 			);
@@ -141,11 +176,24 @@
 			children = (
 				B52C90461AE05F2000C6F92A /* ViewController.h */,
 				B52C90471AE05F2000C6F92A /* ViewController.m */,
+				B5CBB3D91AE102F000E92A57 /* ViewController.xib */,
 				B52C905B1AE05FE700C6F92A /* CitiesViewController.h */,
 				B52C905C1AE05FE700C6F92A /* CitiesViewController.m */,
 				B52C905D1AE05FE700C6F92A /* CitiesViewController.xib */,
+				B5CBB3E21AE145EF00E92A57 /* CalendarViewController.h */,
+				B5CBB3E31AE145EF00E92A57 /* CalendarViewController.m */,
+				B5CBB3E41AE145EF00E92A57 /* CalendarViewController.xib */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B5CBB3DE1AE12B5900E92A57 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B5CBB3DF1AE12B8100E92A57 /* CityModel.h */,
+				B5CBB3E01AE12B8100E92A57 /* CityModel.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,9 +203,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B52C90351AE04D5700C6F92A /* Build configuration list for PBXNativeTarget "AnyWayTest" */;
 			buildPhases = (
+				6B7477A544BE7FFB1D49A30D /* Check Pods Manifest.lock */,
 				B52C900E1AE04D5700C6F92A /* Sources */,
 				B52C900F1AE04D5700C6F92A /* Frameworks */,
 				B52C90101AE04D5700C6F92A /* Resources */,
+				D9088017E1FAE17FBC385655 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,7 +278,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5CBB3DA1AE102F000E92A57 /* ViewController.xib in Resources */,
 				B52C90231AE04D5700C6F92A /* Images.xcassets in Resources */,
+				B5CBB3E61AE145EF00E92A57 /* CalendarViewController.xib in Resources */,
 				B52C905F1AE05FE700C6F92A /* CitiesViewController.xib in Resources */,
 				B52C903F1AE04DF300C6F92A /* Window.xib in Resources */,
 				B52C90441AE0511000C6F92A /* MainCell.xib in Resources */,
@@ -244,6 +296,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6B7477A544BE7FFB1D49A30D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D9088017E1FAE17FBC385655 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B52C900E1AE04D5700C6F92A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -253,7 +338,9 @@
 				B52C901B1AE04D5700C6F92A /* AppDelegate.m in Sources */,
 				B52C90431AE0511000C6F92A /* MainCell.m in Sources */,
 				B52C90481AE05F2000C6F92A /* ViewController.m in Sources */,
+				B5CBB3E11AE12B8100E92A57 /* CityModel.m in Sources */,
 				B52C90181AE04D5700C6F92A /* main.m in Sources */,
+				B5CBB3E51AE145EF00E92A57 /* CalendarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +441,7 @@
 		};
 		B52C90361AE04D5700C6F92A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B32686A7B2766FCBF8146514 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -366,6 +454,7 @@
 		};
 		B52C90371AE04D5700C6F92A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3A27DACBD6E5D2CA845BCDD /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -429,6 +518,7 @@
 				B52C90371AE04D5700C6F92A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B52C90381AE04D5700C6F92A /* Build configuration list for PBXNativeTarget "AnyWayTestTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +527,7 @@
 				B52C903A1AE04D5700C6F92A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
