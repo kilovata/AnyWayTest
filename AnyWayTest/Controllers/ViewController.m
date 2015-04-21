@@ -10,13 +10,30 @@
 #import "MainCell.h"
 #import "CitiesViewController.h"
 #import "CalendarViewController.h"
+#import "FindTicketsModel.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
-@interface ViewController ()<CitiesViewControllerDelegate, CalendarViewControllerDelegate, MainCellDelegate>
+@interface ViewController ()<CitiesViewControllerDelegate, CalendarViewControllerDelegate, MainCellDelegate, FindTicketsModelDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *table;
 @property (weak, nonatomic) IBOutlet UIButton *buttonSearch;
 @property (strong, nonatomic) NSArray *arrayInitItems;
 @property (strong, nonatomic) NSMutableArray *arrayItems;
+@property (strong, nonatomic) FindTicketsModel *findTicketsModel;
+
+@property (strong, nonatomic) NSDate *dateSelected;
+@property (strong, nonatomic) NSString *strDeparture;
+@property (strong, nonatomic) NSString *strArrival;
+@property (strong, nonatomic) NSNumber *numberPassengers;
+@property (strong, nonatomic) NSString *strClass;
+
+@property (weak, nonatomic) IBOutlet UILabel *labelSearchTitle;
+@property (weak, nonatomic) IBOutlet UIView *viewProgress;
+@property (weak, nonatomic) IBOutlet UILabel *labelProgress;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
+
+- (IBAction)findTickets:(id)sender;
 
 @end
 
@@ -38,12 +55,40 @@
     self.buttonSearch.layer.borderWidth = 1.f;
     self.buttonSearch.layer.cornerRadius = 4.f;
     self.buttonSearch.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    
+    self.numberPassengers = @(1);
+    self.strClass = @"E";
 }
 
 
 - (void)goBack {
     
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+- (NSString*)getStringFromDate:(NSDate*)date {
+    
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:self.dateSelected];
+    NSInteger day = [components day];
+    NSInteger month = [components month];
+    return [NSString stringWithFormat:@"%.2li%.2li", (long)day, (long)month];
+}
+
+
+- (IBAction)findTickets:(id)sender {
+    
+    if (!self.findTicketsModel) {
+        self.findTicketsModel = [FindTicketsModel new];
+        self.findTicketsModel.delegate = self;
+    }
+    
+    self.table.userInteractionEnabled = NO;
+    self.viewProgress.hidden = NO;
+    self.table.alpha = 0.2f;
+    self.buttonSearch.enabled = NO;
+    self.buttonSearch.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    [self.findTicketsModel getTicketsWithDate:[self getStringFromDate:self.dateSelected] andDeparture:self.strDeparture andArrival:self.strArrival andNumberPassengers:self.numberPassengers andClass:self.strClass];
 }
 
 
@@ -65,9 +110,9 @@
 - (BOOL)isEnableSearch {
     
     BOOL value = NO;
-    for(int i = 0;i<[self.arrayItems count];i++) {
+    for(int i = 0;i<[self.arrayItems count]-2;i++) {
         
-        for(int j= 0;j<[self.arrayInitItems count];j++) {
+        for(int j= 0;j<[self.arrayInitItems count]-2;j++) {
             
             if([[self.arrayItems objectAtIndex:i] isEqualToString:[self.arrayInitItems objectAtIndex:j]]) {
                 
@@ -123,14 +168,20 @@
     } else if (indexPath.row == 2) {
         CalendarViewController *calendarVC = [CalendarViewController new];
         calendarVC.delegate = self;
+        calendarVC.dateSelected = self.dateSelected;
         [self.navigationController pushViewController:calendarVC animated:YES];
     } else if (indexPath.row == 3) {
         
     } else if (indexPath.row == 4) {
         if ([[self.arrayItems objectAtIndex:4] isEqualToString:@"Эконом"]) {
             [self.arrayItems replaceObjectAtIndex:4 withObject:@"Бизнес"];
+            self.strClass = @"B";
+        } else if ([[self.arrayItems objectAtIndex:4] isEqualToString:@"Бизнес"]) {
+            [self.arrayItems replaceObjectAtIndex:4 withObject:@"Эконом и Бизнес"];
+            self.strClass = @"A";
         } else {
             [self.arrayItems replaceObjectAtIndex:4 withObject:@"Эконом"];
+            self.strClass = @"E";
         }
         [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     }
@@ -139,12 +190,14 @@
 
 
 #pragma mark - CitiesViewControllerDelegate
-- (void)returnCity:(NSString*)strCity andCountry:(NSString*)strCountry andArrive:(BOOL)isArrive {
+- (void)returnCity:(NSString*)strCity andCountry:(NSString*)strCountry andArrive:(BOOL)isArrive andCityCode:(NSString*)strCityCode {
     
     if (isArrive) {
         [self.arrayItems replaceObjectAtIndex:1 withObject:[NSString stringWithFormat:@"%@, %@", strCity, strCountry]];
+        self.strArrival = strCityCode;
     } else {
         [self.arrayItems replaceObjectAtIndex:0 withObject:[NSString stringWithFormat:@"%@, %@", strCity, strCountry]];
+        self.strDeparture = strCityCode;
     }
     
     [self.table reloadData];
@@ -155,20 +208,50 @@
 #pragma mark - CalendarViewControllerDelegate
 - (void)getDateFomCalendar:(NSDate*)date {
     
+    self.dateSelected = date;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateStyle = NSDateFormatterMediumStyle;
     [self.arrayItems replaceObjectAtIndex:2 withObject:[dateFormatter stringFromDate:date]];
     [self.table reloadData];
+    self.buttonSearch.enabled = [self isEnableSearch];
 }
 
 
 #pragma mark - MainCellDelegate
 - (void)updatePeopleCount:(NSInteger)peopleCount {
     
+    self.numberPassengers = @(peopleCount);
     NSString *strPeopleForm = [self wordFormWithCount:peopleCount];
     NSString *strFull = [NSString stringWithFormat:@"%li %@", (long)peopleCount, strPeopleForm];
     [self.arrayItems replaceObjectAtIndex:3 withObject:strFull];
     [self.table reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:3 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+}
+
+
+#pragma mark - FindTicketsModelDelegate
+- (void)findTicketsError:(NSError*)error {
+    
+    [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+}
+
+
+- (void)updateStatusPercentage:(NSNumber*)numPercentage {
+
+    if (self.viewProgress.hidden) {
+        self.viewProgress.hidden = NO;
+    }
+    [self.progressBar setProgress:[numPercentage floatValue]/100 animated:YES];
+    self.labelProgress.text = [NSString stringWithFormat:@"%@%%", numPercentage];
+}
+
+
+- (void)updateStatusPercentageComplete {
+    
+    self.labelSearchTitle.text = @"Загрузка результатов";
+    self.progressBar.hidden = YES;
+    self.labelProgress.hidden = YES;
+    self.indicator.hidden = NO;
+    [self.findTicketsModel requestGetResult];
 }
 
 

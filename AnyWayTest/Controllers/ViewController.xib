@@ -8,8 +8,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
             <connections>
                 <outlet property="buttonSearch" destination="uGw-zn-Zc1" id="fwV-TV-ryu"/>
+                <outlet property="indicator" destination="iV1-zx-uki" id="38Y-Eo-bRN"/>
+                <outlet property="labelProgress" destination="ZHD-Ph-Occ" id="U2C-Lt-agI"/>
+                <outlet property="labelSearchTitle" destination="vvG-5G-Vz0" id="8Oh-vz-BtM"/>
+                <outlet property="progressBar" destination="JZp-G2-9Ca" id="owe-o0-RUB"/>
                 <outlet property="table" destination="LbU-uw-HQf" id="2fC-gR-KJj"/>
                 <outlet property="view" destination="46g-XX-0Vf" id="RU0-M3-XOG"/>
+                <outlet property="viewProgress" destination="Ywc-mK-O6b" id="yS7-pn-yWH"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -36,19 +41,64 @@
                     <state key="normal" title="Поиск авиабилетов">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="findTickets:" destination="-1" eventType="touchUpInside" id="FCT-of-rdq"/>
+                    </connections>
                 </button>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ywc-mK-O6b">
+                    <rect key="frame" x="49" y="119" width="222" height="112"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поиск авиабилетов" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvG-5G-Vz0">
+                            <rect key="frame" x="0.0" y="0.0" width="222" height="30"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHD-Ph-Occ">
+                            <rect key="frame" x="74" y="40" width="73" height="60"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JZp-G2-9Ca">
+                            <rect key="frame" x="36" y="110" width="150" height="2"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="VQD-Wu-pZU"/>
+                            </constraints>
+                        </progressView>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="iV1-zx-uki">
+                            <rect key="frame" x="92" y="38" width="37" height="37"/>
+                            <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="vvG-5G-Vz0" firstAttribute="top" secondItem="Ywc-mK-O6b" secondAttribute="top" id="3hY-0r-vjx"/>
+                        <constraint firstAttribute="height" constant="112" id="42m-uL-uwL"/>
+                        <constraint firstAttribute="centerX" secondItem="vvG-5G-Vz0" secondAttribute="centerX" id="7Vb-J9-2g9"/>
+                        <constraint firstAttribute="centerX" secondItem="ZHD-Ph-Occ" secondAttribute="centerX" id="BBl-Fc-UF2"/>
+                        <constraint firstItem="JZp-G2-9Ca" firstAttribute="top" secondItem="ZHD-Ph-Occ" secondAttribute="bottom" constant="10" id="FNZ-xa-tHi"/>
+                        <constraint firstAttribute="centerX" secondItem="JZp-G2-9Ca" secondAttribute="centerX" id="HZO-Cc-sYW"/>
+                        <constraint firstAttribute="centerX" secondItem="iV1-zx-uki" secondAttribute="centerX" id="Vti-HT-tva"/>
+                        <constraint firstItem="ZHD-Ph-Occ" firstAttribute="top" secondItem="vvG-5G-Vz0" secondAttribute="bottom" constant="10" id="aYm-hn-duY"/>
+                        <constraint firstAttribute="centerY" secondItem="iV1-zx-uki" secondAttribute="centerY" id="goJ-we-AC5"/>
+                        <constraint firstAttribute="width" constant="222" id="r9g-Eo-Miz"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="Ywc-mK-O6b" firstAttribute="top" secondItem="46g-XX-0Vf" secondAttribute="top" constant="119" id="6Sg-h8-67x"/>
                 <constraint firstAttribute="trailing" secondItem="uGw-zn-Zc1" secondAttribute="trailing" constant="30" id="ENI-J2-Oh2"/>
                 <constraint firstItem="LbU-uw-HQf" firstAttribute="leading" secondItem="46g-XX-0Vf" secondAttribute="leading" id="TYE-dI-b2E"/>
                 <constraint firstItem="uGw-zn-Zc1" firstAttribute="top" secondItem="LbU-uw-HQf" secondAttribute="bottom" constant="30" id="ZQK-03-kOJ"/>
+                <constraint firstAttribute="centerX" secondItem="Ywc-mK-O6b" secondAttribute="centerX" id="dWs-CF-yt9"/>
                 <constraint firstItem="LbU-uw-HQf" firstAttribute="centerX" secondItem="uGw-zn-Zc1" secondAttribute="centerX" id="de8-Hz-8A5"/>
                 <constraint firstItem="uGw-zn-Zc1" firstAttribute="leading" secondItem="46g-XX-0Vf" secondAttribute="leading" constant="30" id="djx-eR-cRS"/>
                 <constraint firstItem="LbU-uw-HQf" firstAttribute="top" secondItem="46g-XX-0Vf" secondAttribute="top" id="giE-AU-Ykg"/>
                 <constraint firstAttribute="trailing" secondItem="LbU-uw-HQf" secondAttribute="trailing" id="gm6-eg-3Xz"/>
             </constraints>
-            <point key="canvasLocation" x="406" y="378"/>
+            <point key="canvasLocation" x="336" y="399"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

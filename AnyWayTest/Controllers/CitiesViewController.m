@@ -86,8 +86,8 @@
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(returnCity:andCountry:andArrive:)]) {
-        [self.delegate returnCity:cell.textLabel.text andCountry:cell.detailTextLabel.text andArrive:isArrive];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(returnCity:andCountry:andArrive:andCityCode:)]) {
+        [self.delegate returnCity:cell.textLabel.text andCountry:cell.detailTextLabel.text andArrive:isArrive andCityCode:[self.array[indexPath.row] objectForKey:@"CityCode"]];
     }
     [self.navigationController popViewControllerAnimated:YES];
 }

@@ -22,6 +22,9 @@
 		B5CBB3E11AE12B8100E92A57 /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CBB3E01AE12B8100E92A57 /* CityModel.m */; };
 		B5CBB3E51AE145EF00E92A57 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CBB3E31AE145EF00E92A57 /* CalendarViewController.m */; };
 		B5CBB3E61AE145EF00E92A57 /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5CBB3E41AE145EF00E92A57 /* CalendarViewController.xib */; };
+		B5EAE7CD1AE663250003D9C3 /* FindTicketsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EAE7CC1AE663250003D9C3 /* FindTicketsModel.m */; };
+		B5EAE7D11AE68E4A0003D9C3 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5EAE7CF1AE68E4A0003D9C3 /* ResultViewController.m */; };
+		B5EAE7D21AE68E4A0003D9C3 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5EAE7D01AE68E4A0003D9C3 /* ResultViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,11 @@
 		B5CBB3E21AE145EF00E92A57 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		B5CBB3E31AE145EF00E92A57 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		B5CBB3E41AE145EF00E92A57 /* CalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
+		B5EAE7CB1AE663250003D9C3 /* FindTicketsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FindTicketsModel.h; path = Models/FindTicketsModel.h; sourceTree = "<group>"; };
+		B5EAE7CC1AE663250003D9C3 /* FindTicketsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FindTicketsModel.m; path = Models/FindTicketsModel.m; sourceTree = "<group>"; };
+		B5EAE7CE1AE68E4A0003D9C3 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
+		B5EAE7CF1AE68E4A0003D9C3 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
+		B5EAE7D01AE68E4A0003D9C3 /* ResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +191,9 @@
 				B5CBB3E21AE145EF00E92A57 /* CalendarViewController.h */,
 				B5CBB3E31AE145EF00E92A57 /* CalendarViewController.m */,
 				B5CBB3E41AE145EF00E92A57 /* CalendarViewController.xib */,
+				B5EAE7CE1AE68E4A0003D9C3 /* ResultViewController.h */,
+				B5EAE7CF1AE68E4A0003D9C3 /* ResultViewController.m */,
+				B5EAE7D01AE68E4A0003D9C3 /* ResultViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -192,6 +203,8 @@
 			children = (
 				B5CBB3DF1AE12B8100E92A57 /* CityModel.h */,
 				B5CBB3E01AE12B8100E92A57 /* CityModel.m */,
+				B5EAE7CB1AE663250003D9C3 /* FindTicketsModel.h */,
+				B5EAE7CC1AE663250003D9C3 /* FindTicketsModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -280,6 +293,7 @@
 			files = (
 				B5CBB3DA1AE102F000E92A57 /* ViewController.xib in Resources */,
 				B52C90231AE04D5700C6F92A /* Images.xcassets in Resources */,
+				B5EAE7D21AE68E4A0003D9C3 /* ResultViewController.xib in Resources */,
 				B5CBB3E61AE145EF00E92A57 /* CalendarViewController.xib in Resources */,
 				B52C905F1AE05FE700C6F92A /* CitiesViewController.xib in Resources */,
 				B52C903F1AE04DF300C6F92A /* Window.xib in Resources */,
@@ -340,7 +354,9 @@
 				B52C90481AE05F2000C6F92A /* ViewController.m in Sources */,
 				B5CBB3E11AE12B8100E92A57 /* CityModel.m in Sources */,
 				B52C90181AE04D5700C6F92A /* main.m in Sources */,
+				B5EAE7CD1AE663250003D9C3 /* FindTicketsModel.m in Sources */,
 				B5CBB3E51AE145EF00E92A57 /* CalendarViewController.m in Sources */,
+				B5EAE7D11AE68E4A0003D9C3 /* ResultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

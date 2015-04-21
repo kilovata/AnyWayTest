@@ -25,6 +25,9 @@
     RSDFDatePickerView *datePickerView = [[RSDFDatePickerView alloc] initWithFrame:self.view.bounds];
     datePickerView.delegate = self;
     datePickerView.dataSource = self;
+    if (self.dateSelected) {
+        [datePickerView selectDate:self.dateSelected];
+    }
     [self.view addSubview:datePickerView];
 }
 

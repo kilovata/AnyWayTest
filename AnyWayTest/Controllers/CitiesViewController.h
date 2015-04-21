@@ -10,7 +10,7 @@
 
 @protocol CitiesViewControllerDelegate <NSObject>
 
-- (void)returnCity:(NSString*)strCity andCountry:(NSString*)strCountry andArrive:(BOOL)isArrive;
+- (void)returnCity:(NSString*)strCity andCountry:(NSString*)strCountry andArrive:(BOOL)isArrive andCityCode:(NSString*)strCityCode;
 
 @end
 

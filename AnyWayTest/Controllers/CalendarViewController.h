@@ -16,6 +16,8 @@
 
 @interface CalendarViewController : UIViewController
 
+@property (nonatomic, strong) NSDate *dateSelected;
+
 @property (weak, nonatomic) id <CalendarViewControllerDelegate> delegate;
 
 @end
