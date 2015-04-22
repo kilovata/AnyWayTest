@@ -8,6 +8,10 @@
 
 #import "FindTicketsModel.h"
 #import <AFNetworking/AFNetworking.h>
+#import <CoreData+MagicalRecord.h>
+#import "Airline.h"
+#import "Fare.h"
+#import "AirlineFull.h"
 
 @interface FindTicketsModel()
 
@@ -55,12 +59,13 @@
             }
             if ([numPercentage isEqualToNumber:@100]) {
                 [self.timer invalidate];
-                if (self.delegate && [self.delegate respondsToSelector:@selector(updateStatusPercentageComplete)]) {
-                    [self.delegate updateStatusPercentageComplete];
-                }
+                [self performSelector:@selector(delayCall) withObject:nil afterDelay:0.5f];
             }
         } else {
             [self.timer invalidate];
+            if (self.delegate && [self.delegate respondsToSelector:@selector(findTicketsError:)]) {
+                [self.delegate findTicketsError:nil];
+            }
         }
     
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -72,6 +77,14 @@
 }
 
 
+- (void)delayCall {
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(updateStatusPercentageComplete)]) {
+        [self.delegate updateStatusPercentageComplete];
+    }
+}
+
+
 - (void)requestGetResult {
     
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init];
@@ -79,7 +92,11 @@
     NSDictionary *parameters = @{@"R" : self.strIdSynonym, @"L" : @"RU", @"C" : @"RUB", @"DebugFullNames" : @"true", @"_Serialize" : @"JSON"};
     [manager GET:@"https://www.anywayanyday.com/api2/Fares2/" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
         
-        NSLog(@"%@", responseObject);
+        [self saveToCoreData:responseObject];
+        
+        if (self.delegate && [self.delegate respondsToSelector:@selector(resultsDidReceived)]) {
+            [self.delegate resultsDidReceived];
+        }
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
@@ -87,6 +104,71 @@
             [self.delegate findTicketsError:error];
         }
     }];
+}
+
+
+- (void)saveToCoreData:(id)responseObject {
+    
+    NSArray *arrayAirlines = [responseObject objectForKey:@"Airlines"];
+    for (int i=0; i<arrayAirlines.count; i++) {
+        Airline *airline = airline = [Airline MR_findFirstByAttribute:@"code" withValue:[arrayAirlines[i] objectForKey:@"Code"]];
+        if (!airline) {
+            airline = [Airline MR_createEntity];
+            airline.code = [arrayAirlines[i] objectForKey:@"Code"];
+        }
+        NSArray *arrayFares = [arrayAirlines[i] objectForKey:@"Fares"];
+        for (int j=0; j<arrayFares.count; j++) {
+            NSDictionary *dictFare = arrayFares[j];
+            if (dictFare) {
+                Fare *fare = [Fare MR_findFirstByAttribute:@"fareId" withValue:[dictFare objectForKey:@"FareId"]];
+                if (!fare) {
+                    fare = [Fare MR_createEntity];
+                    fare.fareId = [dictFare objectForKey:@"FareId"];
+                    fare.totalAmount = [dictFare objectForKey:@"TotalAmount"];
+                    [fare setAirline:airline];
+                    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+                }
+            }
+        }
+    }
+}
+
+
+- (void)getAirlinesFullName {
+    
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] init];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/plain"];
+    [manager GET:@"https://www.anywayanyday.com/Controller/UserFuncs/BackOffice/GetAirlines/" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        [self saveFullNameAirlines:responseObject];
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+    
+    }];
+}
+
+
+- (void)saveFullNameAirlines:(id)responseObject {
+    
+    NSArray *array = responseObject;
+    for (int i=0; i<array.count; i++) {
+        NSString *strCode = [array[i] objectForKey:@"Code"];
+        AirlineFull *airLineFull = [AirlineFull MR_findFirstByAttribute:@"code" withValue:strCode];
+        if (!airLineFull) {
+            airLineFull = [AirlineFull MR_createEntity];
+            airLineFull.code = [array[i] objectForKey:@"Code"];
+            airLineFull.name = [array[i] objectForKey:@"Name"];
+        }
+    }
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+}
+
+
+- (void)truncateAll {
+    
+    [Airline MR_truncateAll];
+    [Fare MR_truncateAll];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 
 

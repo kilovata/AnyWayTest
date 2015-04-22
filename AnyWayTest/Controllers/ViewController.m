@@ -12,6 +12,7 @@
 #import "CalendarViewController.h"
 #import "FindTicketsModel.h"
 #import <SVProgressHUD/SVProgressHUD.h>
+#import "ResultViewController.h"
 
 @interface ViewController ()<CitiesViewControllerDelegate, CalendarViewControllerDelegate, MainCellDelegate, FindTicketsModelDelegate>
 
@@ -46,11 +47,23 @@
     [super viewDidLoad];
     
     self.title = @"anywayanyday";
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Назад" style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
-    self.arrayInitItems = @[@"Пункт отправления", @"Пункт назначения", @"Дата перелёта", @"1 пассажир", @"Эконом"];
-    self.arrayItems = [NSMutableArray arrayWithArray:self.arrayInitItems];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
     [self.table registerNib:[UINib nibWithNibName:@"MainCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"MainCell"];
     self.table.tableFooterView = [UIView new];
+    self.arrayInitItems = @[@"Пункт отправления", @"Пункт назначения", @"Дата перелёта", @"1 пассажир", @"Эконом"];
+    
+    self.findTicketsModel = [FindTicketsModel new];
+    self.findTicketsModel.delegate = self;
+    [self.findTicketsModel getAirlinesFullName];
+    [self.findTicketsModel truncateAll];
+    
+    [self initSearch];
+}
+
+
+- (void)initSearch {
+    
+    self.arrayItems = [NSMutableArray arrayWithArray:self.arrayInitItems];
     
     self.buttonSearch.layer.borderWidth = 1.f;
     self.buttonSearch.layer.cornerRadius = 4.f;
@@ -58,6 +71,16 @@
     
     self.numberPassengers = @(1);
     self.strClass = @"E";
+    self.dateSelected = nil;
+    self.strDeparture = nil;
+    self.strArrival = nil;
+    
+    self.buttonSearch.enabled = [self isEnableSearch];
+    
+    self.table.userInteractionEnabled = YES;
+    self.table.alpha = 1.f;
+    self.viewProgress.hidden = YES;
+    [self.table reloadData];
 }
 
 
@@ -77,11 +100,6 @@
 
 
 - (IBAction)findTickets:(id)sender {
-    
-    if (!self.findTicketsModel) {
-        self.findTicketsModel = [FindTicketsModel new];
-        self.findTicketsModel.delegate = self;
-    }
     
     self.table.userInteractionEnabled = NO;
     self.viewProgress.hidden = NO;
@@ -149,6 +167,10 @@
         cell.labelPassengers.hidden = NO;
         cell.stepper.hidden = NO;
         cell.labelPassengers.text = self.arrayItems[indexPath.row];
+    } else {
+        cell.labelTitle.hidden = NO;
+        cell.labelPassengers.hidden = YES;
+        cell.stepper.hidden = YES;
     }
     return cell;
 }
@@ -183,7 +205,7 @@
             [self.arrayItems replaceObjectAtIndex:4 withObject:@"Эконом"];
             self.strClass = @"E";
         }
-        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        [tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:4 inSection:0]] withRowAnimation:UITableViewRowAnimationLeft];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
@@ -252,6 +274,14 @@
     self.labelProgress.hidden = YES;
     self.indicator.hidden = NO;
     [self.findTicketsModel requestGetResult];
+}
+
+
+- (void)resultsDidReceived {
+    
+    [self initSearch];
+    ResultViewController *resultVC = [ResultViewController new];
+    [self.navigationController pushViewController:resultVC animated:YES];
 }
 
 

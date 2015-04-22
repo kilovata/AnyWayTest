@@ -8,6 +8,7 @@
 
 #import "CitiesViewController.h"
 #import "CityModel.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface CitiesViewController ()<CityModelDelegate> {
     BOOL isArrive;
@@ -140,6 +141,12 @@
     
     self.array = array;
     [self.table reloadData];
+}
+
+
+- (void)citiesError:(NSError*)error {
+    
+    [SVProgressHUD showErrorWithStatus:error.localizedDescription];
 }
 
 

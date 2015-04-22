@@ -12,8 +12,8 @@
 
 - (void)updateStatusPercentage:(NSNumber*)numPercentage;
 - (void)updateStatusPercentageComplete;
-- (void)ticketsGetReceived:(NSArray*)array;
 - (void)findTicketsError:(NSError*)error;
+- (void)resultsDidReceived;
 
 @end
 
@@ -23,5 +23,7 @@
 
 - (void)getTicketsWithDate:(NSString*)strDate andDeparture:(NSString*)strDeparture andArrival:(NSString*)strArrival andNumberPassengers:(NSNumber*)numPassengers andClass:(NSString*)strClass;
 - (void)requestGetResult;
+- (void)truncateAll;
+- (void)getAirlinesFullName;
 
 @end

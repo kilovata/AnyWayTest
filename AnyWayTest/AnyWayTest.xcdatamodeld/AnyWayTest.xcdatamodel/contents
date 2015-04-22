@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Airline" representedClassName="Airline" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fares" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fare" inverseName="airline" inverseEntity="Fare" syncable="YES"/>
+    </entity>
+    <entity name="AirlineFull" representedClassName="AirlineFull" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Fare" representedClassName="Fare" syncable="YES">
+        <attribute name="fareId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalAmount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="airline" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Airline" inverseName="fares" inverseEntity="Airline" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Fare" positionX="-54" positionY="0" width="128" height="90"/>
+        <element name="Airline" positionX="-36" positionY="36" width="128" height="75"/>
+        <element name="AirlineFull" positionX="-18" positionY="72" width="128" height="75"/>
+    </elements>
+</model>

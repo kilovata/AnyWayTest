@@ -18,6 +18,19 @@
 		B52C90481AE05F2000C6F92A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B52C90471AE05F2000C6F92A /* ViewController.m */; };
 		B52C905E1AE05FE700C6F92A /* CitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B52C905C1AE05FE700C6F92A /* CitiesViewController.m */; };
 		B52C905F1AE05FE700C6F92A /* CitiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B52C905D1AE05FE700C6F92A /* CitiesViewController.xib */; };
+		B59967671AE781FF006AF5D0 /* AnyWayTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B59967651AE781FF006AF5D0 /* AnyWayTest.xcdatamodeld */; };
+		B59967731AE788C5006AF5D0 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B59967721AE788C5006AF5D0 /* DataSource.m */; };
+		B59967761AE78936006AF5D0 /* ResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B59967751AE78936006AF5D0 /* ResultModel.m */; };
+		B599677A1AE78B0C006AF5D0 /* ResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B59967781AE78B0C006AF5D0 /* ResultCell.m */; };
+		B599677B1AE78B0C006AF5D0 /* ResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59967791AE78B0C006AF5D0 /* ResultCell.xib */; };
+		B599678D1AE7D690006AF5D0 /* Airline.m in Sources */ = {isa = PBXBuildFile; fileRef = B599678A1AE7D690006AF5D0 /* Airline.m */; };
+		B599678E1AE7D690006AF5D0 /* Fare.m in Sources */ = {isa = PBXBuildFile; fileRef = B599678C1AE7D690006AF5D0 /* Fare.m */; };
+		B59967911AE7E062006AF5D0 /* AirlineFull.m in Sources */ = {isa = PBXBuildFile; fileRef = B59967901AE7E062006AF5D0 /* AirlineFull.m */; };
+		B59967951AE7E305006AF5D0 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59967931AE7E305006AF5D0 /* DetailViewController.m */; };
+		B59967961AE7E305006AF5D0 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B59967941AE7E305006AF5D0 /* DetailViewController.xib */; };
+		B59967991AE7E3DF006AF5D0 /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B59967981AE7E3DF006AF5D0 /* DetailModel.m */; };
+		B599679D1AE7E548006AF5D0 /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B599679B1AE7E548006AF5D0 /* DetailCell.m */; };
+		B599679E1AE7E548006AF5D0 /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B599679C1AE7E548006AF5D0 /* DetailCell.xib */; };
 		B5CBB3DA1AE102F000E92A57 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5CBB3D91AE102F000E92A57 /* ViewController.xib */; };
 		B5CBB3E11AE12B8100E92A57 /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CBB3E01AE12B8100E92A57 /* CityModel.m */; };
 		B5CBB3E51AE145EF00E92A57 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CBB3E31AE145EF00E92A57 /* CalendarViewController.m */; };
@@ -59,6 +72,28 @@
 		B52C905B1AE05FE700C6F92A /* CitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitiesViewController.h; sourceTree = "<group>"; };
 		B52C905C1AE05FE700C6F92A /* CitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitiesViewController.m; sourceTree = "<group>"; };
 		B52C905D1AE05FE700C6F92A /* CitiesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CitiesViewController.xib; sourceTree = "<group>"; };
+		B59967661AE781FF006AF5D0 /* AnyWayTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AnyWayTest.xcdatamodel; sourceTree = "<group>"; };
+		B59967711AE788C5006AF5D0 /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataSource.h; path = Models/DataSource.h; sourceTree = "<group>"; };
+		B59967721AE788C5006AF5D0 /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataSource.m; path = Models/DataSource.m; sourceTree = "<group>"; };
+		B59967741AE78936006AF5D0 /* ResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultModel.h; path = Models/ResultModel.h; sourceTree = "<group>"; };
+		B59967751AE78936006AF5D0 /* ResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultModel.m; path = Models/ResultModel.m; sourceTree = "<group>"; };
+		B59967771AE78B0C006AF5D0 /* ResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultCell.h; sourceTree = "<group>"; };
+		B59967781AE78B0C006AF5D0 /* ResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultCell.m; sourceTree = "<group>"; };
+		B59967791AE78B0C006AF5D0 /* ResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultCell.xib; sourceTree = "<group>"; };
+		B59967891AE7D690006AF5D0 /* Airline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Airline.h; sourceTree = "<group>"; };
+		B599678A1AE7D690006AF5D0 /* Airline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Airline.m; sourceTree = "<group>"; };
+		B599678B1AE7D690006AF5D0 /* Fare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fare.h; sourceTree = "<group>"; };
+		B599678C1AE7D690006AF5D0 /* Fare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fare.m; sourceTree = "<group>"; };
+		B599678F1AE7E062006AF5D0 /* AirlineFull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirlineFull.h; sourceTree = "<group>"; };
+		B59967901AE7E062006AF5D0 /* AirlineFull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirlineFull.m; sourceTree = "<group>"; };
+		B59967921AE7E305006AF5D0 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		B59967931AE7E305006AF5D0 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		B59967941AE7E305006AF5D0 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		B59967971AE7E3DF006AF5D0 /* DetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailModel.h; path = Models/DetailModel.h; sourceTree = "<group>"; };
+		B59967981AE7E3DF006AF5D0 /* DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailModel.m; path = Models/DetailModel.m; sourceTree = "<group>"; };
+		B599679A1AE7E548006AF5D0 /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCell.h; sourceTree = "<group>"; };
+		B599679B1AE7E548006AF5D0 /* DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCell.m; sourceTree = "<group>"; };
+		B599679C1AE7E548006AF5D0 /* DetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
 		B5CBB3D91AE102F000E92A57 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		B5CBB3DF1AE12B8100E92A57 /* CityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CityModel.h; path = Models/CityModel.h; sourceTree = "<group>"; };
 		B5CBB3E01AE12B8100E92A57 /* CityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CityModel.m; path = Models/CityModel.m; sourceTree = "<group>"; };
@@ -131,6 +166,7 @@
 		B52C90141AE04D5700C6F92A /* AnyWayTest */ = {
 			isa = PBXGroup;
 			children = (
+				B59967881AE7D690006AF5D0 /* CoreData */,
 				B5CBB3DE1AE12B5900E92A57 /* Models */,
 				B52C90191AE04D5700C6F92A /* AppDelegate.h */,
 				B52C901A1AE04D5700C6F92A /* AppDelegate.m */,
@@ -147,6 +183,7 @@
 			children = (
 				B52C90161AE04D5700C6F92A /* Info.plist */,
 				B52C90171AE04D5700C6F92A /* main.m */,
+				B59967651AE781FF006AF5D0 /* AnyWayTest.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -175,6 +212,12 @@
 				B52C90401AE0511000C6F92A /* MainCell.h */,
 				B52C90411AE0511000C6F92A /* MainCell.m */,
 				B52C90421AE0511000C6F92A /* MainCell.xib */,
+				B59967771AE78B0C006AF5D0 /* ResultCell.h */,
+				B59967781AE78B0C006AF5D0 /* ResultCell.m */,
+				B59967791AE78B0C006AF5D0 /* ResultCell.xib */,
+				B599679A1AE7E548006AF5D0 /* DetailCell.h */,
+				B599679B1AE7E548006AF5D0 /* DetailCell.m */,
+				B599679C1AE7E548006AF5D0 /* DetailCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -194,8 +237,24 @@
 				B5EAE7CE1AE68E4A0003D9C3 /* ResultViewController.h */,
 				B5EAE7CF1AE68E4A0003D9C3 /* ResultViewController.m */,
 				B5EAE7D01AE68E4A0003D9C3 /* ResultViewController.xib */,
+				B59967921AE7E305006AF5D0 /* DetailViewController.h */,
+				B59967931AE7E305006AF5D0 /* DetailViewController.m */,
+				B59967941AE7E305006AF5D0 /* DetailViewController.xib */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B59967881AE7D690006AF5D0 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B599678F1AE7E062006AF5D0 /* AirlineFull.h */,
+				B59967901AE7E062006AF5D0 /* AirlineFull.m */,
+				B59967891AE7D690006AF5D0 /* Airline.h */,
+				B599678A1AE7D690006AF5D0 /* Airline.m */,
+				B599678B1AE7D690006AF5D0 /* Fare.h */,
+				B599678C1AE7D690006AF5D0 /* Fare.m */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		B5CBB3DE1AE12B5900E92A57 /* Models */ = {
@@ -205,6 +264,12 @@
 				B5CBB3E01AE12B8100E92A57 /* CityModel.m */,
 				B5EAE7CB1AE663250003D9C3 /* FindTicketsModel.h */,
 				B5EAE7CC1AE663250003D9C3 /* FindTicketsModel.m */,
+				B59967711AE788C5006AF5D0 /* DataSource.h */,
+				B59967721AE788C5006AF5D0 /* DataSource.m */,
+				B59967741AE78936006AF5D0 /* ResultModel.h */,
+				B59967751AE78936006AF5D0 /* ResultModel.m */,
+				B59967971AE7E3DF006AF5D0 /* DetailModel.h */,
+				B59967981AE7E3DF006AF5D0 /* DetailModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -295,8 +360,11 @@
 				B52C90231AE04D5700C6F92A /* Images.xcassets in Resources */,
 				B5EAE7D21AE68E4A0003D9C3 /* ResultViewController.xib in Resources */,
 				B5CBB3E61AE145EF00E92A57 /* CalendarViewController.xib in Resources */,
+				B599679E1AE7E548006AF5D0 /* DetailCell.xib in Resources */,
+				B59967961AE7E305006AF5D0 /* DetailViewController.xib in Resources */,
 				B52C905F1AE05FE700C6F92A /* CitiesViewController.xib in Resources */,
 				B52C903F1AE04DF300C6F92A /* Window.xib in Resources */,
+				B599677B1AE78B0C006AF5D0 /* ResultCell.xib in Resources */,
 				B52C90441AE0511000C6F92A /* MainCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,13 +418,23 @@
 			files = (
 				B52C905E1AE05FE700C6F92A /* CitiesViewController.m in Sources */,
 				B52C901B1AE04D5700C6F92A /* AppDelegate.m in Sources */,
+				B59967951AE7E305006AF5D0 /* DetailViewController.m in Sources */,
 				B52C90431AE0511000C6F92A /* MainCell.m in Sources */,
+				B599679D1AE7E548006AF5D0 /* DetailCell.m in Sources */,
+				B59967731AE788C5006AF5D0 /* DataSource.m in Sources */,
 				B52C90481AE05F2000C6F92A /* ViewController.m in Sources */,
+				B59967671AE781FF006AF5D0 /* AnyWayTest.xcdatamodeld in Sources */,
+				B599677A1AE78B0C006AF5D0 /* ResultCell.m in Sources */,
+				B59967991AE7E3DF006AF5D0 /* DetailModel.m in Sources */,
 				B5CBB3E11AE12B8100E92A57 /* CityModel.m in Sources */,
 				B52C90181AE04D5700C6F92A /* main.m in Sources */,
+				B59967761AE78936006AF5D0 /* ResultModel.m in Sources */,
 				B5EAE7CD1AE663250003D9C3 /* FindTicketsModel.m in Sources */,
+				B599678D1AE7D690006AF5D0 /* Airline.m in Sources */,
 				B5CBB3E51AE145EF00E92A57 /* CalendarViewController.m in Sources */,
 				B5EAE7D11AE68E4A0003D9C3 /* ResultViewController.m in Sources */,
+				B599678E1AE7D690006AF5D0 /* Fare.m in Sources */,
+				B59967911AE7E062006AF5D0 /* AirlineFull.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +624,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B59967651AE781FF006AF5D0 /* AnyWayTest.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B59967661AE781FF006AF5D0 /* AnyWayTest.xcdatamodel */,
+			);
+			currentVersion = B59967661AE781FF006AF5D0 /* AnyWayTest.xcdatamodel */;
+			path = AnyWayTest.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B52C900A1AE04D5600C6F92A /* Project object */;
 }

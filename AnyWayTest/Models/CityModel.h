@@ -11,7 +11,7 @@
 @protocol CityModelDelegate <NSObject>
 
 - (void)citiesGetReceived:(NSArray*)array;
-
+- (void)citiesError:(NSError*)error;
 @end
 
 @interface CityModel : NSObject

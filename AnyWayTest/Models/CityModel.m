@@ -25,6 +25,9 @@
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
+        if (self.delegate && [self.delegate respondsToSelector:@selector(citiesError:)]) {
+            [self.delegate citiesError:error];
+        }
     }];
 }
 
